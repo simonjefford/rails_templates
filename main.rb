@@ -29,6 +29,12 @@ if yes?("Use rspec?")
   git :add => ".", :commit => "-a -m 'Added rspec'"
 end
 
+gem 'cucumber'
 generate("cucumber")
 
 git :add => ".", :commit => "-a -m 'Added cucumber'"
+
+gem 'haml'
+run "haml --rails ."
+
+git :add => ".", :commit => "-a -m 'Added haml'"
