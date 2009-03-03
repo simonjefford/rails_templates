@@ -19,22 +19,26 @@ CODE
 
 run "cp config/database.yml config/example_database.yml"
 
-git :add => ".", :commit => "-a -m 'Initial Commit'"
+git :add => "."
+git :commit => "-m 'Initial Commit'"
 
 if yes?("Use rspec?")
   plugin 'rspec', :git => 'git://github.com/dchelimsky/rspec.git'
   plugin 'rspec-rails', :git => 'git://github.com/dchelimsky/rspec-rails.git'
   generate("rspec")
 
-  git :add => ".", :commit => "-a -m 'Added rspec'"
+  git :add => "."
+  git :commit => "-m 'Added rspec'"
 end
 
 gem 'cucumber'
 generate("cucumber")
 
-git :add => ".", :commit => "-a -m 'Added cucumber'"
+git :add => "."
+git :commit => "-m 'Added cucumber'"
 
 gem 'haml'
 run "haml --rails ."
 
-git :add => ".", :commit => "-a -m 'Added haml'"
+git :add => "."
+git :commit => "-m 'Added haml'"
